@@ -55,7 +55,7 @@ React.useEffect(() => {
 },[roomId]);
 
   return (
-    <div className='w-[70vw] md:w-[78vw] ml-[29vw] md:ml-[22vw] max-h-[83vh] space-y-4 overflow-y-scroll mx-auto'>
+    <div className='w-[70vw] md:w-[78vw] my-4 ml-[29vw] md:ml-[22vw] max-h-[83vh] space-y-4 overflow-y-scroll mx-auto'>
       {messages?.map((message) => (
         <div key={message.uid} className="flex rounded-md bg-green-50 p-4  text-md flex-col m-1">
           <div className="flex items-center">
