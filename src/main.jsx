@@ -8,14 +8,19 @@ import Login from './pages/Login'
 import Error404 from './pages/Error404'
 import { Provider } from 'react-redux' 
 import store from './features/store/store'
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 const router=createBrowserRouter(
   createRoutesFromElements(
     <>
     <Route path='/' element={<Layout/>}>
-      <Route path="/" element={<Home/>} />
-      <Route path="/home" element={<Home/>} />
+
+      <Route path="/" element={
+        <ProtectedRoute>
+          <Home/>
+        </ProtectedRoute>
+      } />
       <Route path="/login" element={<Login/>} />
     </Route>
     <Route path='*' element={<Error404/>}/>

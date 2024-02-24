@@ -18,7 +18,7 @@ const Login = () => {
         .then((userCredentials)=>{
             const user=userCredentials.user;
             dispatch(login(user))
-            navigate('/home')
+            navigate('/')
         })
         //failed to log-in
         .catch((error)=>{

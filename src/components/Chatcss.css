@@ -1,0 +1,13 @@
+/* FILEPATH: /C:/Users/Global Computers/Desktop/Clones/chatApp/src/components/Chat.css */
+
+/* Styling the scroll bar */
+::-webkit-scrollbar {
+  width:13px; /* thin width */
+  background-color: white; /* purple background color */
+}
+
+/* Styling the thumb of the scroll bar */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(137, 21, 172); /* purple thumb color */
+  border-radius: 8px; /* rounded corners */
+}

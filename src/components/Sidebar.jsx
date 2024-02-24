@@ -57,13 +57,13 @@ fetchData();
     
 
     return (
-        <div className='flex flex-col m-4 mb-8 w-[17vw] pb-8 '>
+        <div className='flex flex-col px-1 lg:px-6 lg:m-4 mb-8 md:w-[18vw] w-[25vw] pb-1 lg:pb-8 '>
             <div className='hidden md:flex items-center gap-x-2 border-b pb-4 '>
                 <span>🟢</span>
                 <Avatar img={user?.photoURL} width={50} />
                 <h1 className='text-white text-xl'>{user?.displayName}</h1>
             </div>
-                <div className='flex gap-x-2 mt-4 text-white text-xl cursor-pointer font-semibold items-center border-purple-400 pb-4 border-b'
+                <div className='flex gap-x-2 mt-4 text-white text-md md:text-xl cursor-pointer font-semibold items-center border-purple-400 pb-4 border-b'
                 onClick={()=>{setChannelsOpen(!channelsOpen)}}>
                        <FaArrowDown className={`${channelsOpen ? `rotate-180`:`rotate-0`} transition-transform duration-200 `} style={{fontSize:"1rem"}}/> Channels
                      </div>
@@ -73,7 +73,7 @@ fetchData();
                           {
                           rooms?.map((room)=>{
                             return (
-                              <div key={room.id} className='flex gap-x-2 pt-3 hover:underline text-white text-md cursor-pointer font-semibold items-center border-purple-400 pb-4 border-b'
+                              <div key={room.id} className='flex gap-x-2 pt-3 hover:underline text-white text-xs md:text-[15px] cursor-pointer font-semibold items-center border-purple-400 pb-4 border-b'
                               onClick={()=>{
                                 dispatch(setRoomId(room))
                               }}>{room.data.name}</div>
@@ -85,7 +85,7 @@ fetchData();
                         </div>
                     )
                 }
-                <button className='border-purple-900 hover:bg-blue-500 hover:border-blue-500  duration-150 mx-auto p-4 rounded-lg border text-white w-[80%] mt-6 '
+                <button className='md:border-purple-900 text-xs md:text-md md:hover:bg-blue-500 md:hover:border-blue-500  duration-150 mx-auto py-2 bg-purple-800 active:scale-95 border-none md:p-4 rounded-lg border text-white w-[100%] lg:w-[80%] mt-6 '
                 onClick={handleClick}>
                     Create Chat Room
                 </button>

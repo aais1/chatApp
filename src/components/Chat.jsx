@@ -4,6 +4,7 @@ import { useState } from "react";
 import { arrayUnion, onSnapshot } from "firebase/firestore"; 
 import { db } from "../firebase";
 import { updateDoc , doc } from "firebase/firestore";
+import './Chatcss.css'
 
 const Chat = ({chat}) => {
 
@@ -14,6 +15,8 @@ const Chat = ({chat}) => {
   const roomData= useSelector((state) => state.room?.roomId?.data);
 
   const [messages, setMessages] = React.useState(chat);
+
+  console.log(messages);
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -41,8 +44,7 @@ React.useEffect(() => {
     const unsubscribe = onSnapshot(
       roomRef,
       (doc) => {
-        // Assuming 'chat' is a field in the room document
-        const chatData = doc.data()?.chat || []; // Default to an empty array if 'chat' is not present
+        const chatData = doc.data()?.chat  // Default to an empty array if 'chat' is not present
         setMessages(chatData);
       }
     );
@@ -55,7 +57,7 @@ React.useEffect(() => {
 },[roomId]);
 
   return (
-    <div className='w-[70vw] md:w-[78vw] my-4 ml-[29vw] md:ml-[22vw] max-h-[83vh] space-y-4 overflow-y-scroll mx-auto'>
+    <div className='w-[70vw] md:w-[78vw]  ml-[29vw] md:ml-[22vw] max-h-[83vh] space-y-4 overflow-y-scroll mx-auto'>
       {messages?.map((message) => (
         <div key={message.uid} className="flex rounded-md bg-green-50 p-4  text-md flex-col m-1">
           <div className="flex items-center">
